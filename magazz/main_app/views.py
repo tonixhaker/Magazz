@@ -14,6 +14,18 @@ class ProductsView(ListView):
     model = Product
     context_object_name = 'products'
 
+    def get_context_data(self, **kwargs):
+        context = super(ProductsView, self).get_context_data(**kwargs)
+        context['categories'] = Category.objects.filter()
+        filter_val = self.request.GET.get('categoryid', 'all')
+        if filter_val == 'all':
+            context['products'] = Product.objects.filter()
+        else:
+            cat = Category.objects.filter(id=int(filter_val))
+            context['products'] = Product.objects.filter(category=cat)
+        return context
+
+
 
 class ProductDetail(ListView):
     template_name = "detailprod.html"

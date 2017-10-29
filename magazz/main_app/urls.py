@@ -6,6 +6,7 @@ from django.conf import settings
 urlpatterns = [
     url(r'^$', views.IndexView.as_view()),
     url(r'^products/$', views.ProductsView.as_view(), name='products'),
+    url(r'^products/post$', views.ProductsView.as_view(), name='products'),
     url(r'^addprod/$', views.ProductsAdd.as_view(), name='addprod'),
     url(r'^prodetail/(?P<pk>\d+)/$', views.ProductDetail.as_view(), name='prodetail'),
     url(r'^prodell/(?P<pk>\d+)/$', views.ProductDel.as_view(), name='prodell'),
