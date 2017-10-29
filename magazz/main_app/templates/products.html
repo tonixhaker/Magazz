@@ -21,6 +21,7 @@
             <th>Name</th>
             <th>Category</th>
             <th>Price</th>
+            <td></td>
         </tr>
         {% for pro in products%}
         <tr>
@@ -37,6 +38,9 @@
             </td>
             <td>
                 <h4>{{pro.price}}</h4>
+            </td>
+            <td>
+                <a style="margin-top: 10px;" class="btn btn-info col-sm-7 " href="{%url 'prodetail' pro.id %}">Details</a>
             </td>
         </tr>
         {% endfor %}

@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+    {% block title %}
+    <title>Product info</title>
+    {% endblock %}
+{% block content %}
+
+        {% for prod in products%}
+        <div class="row">
+            {% if prod.photo %}
+            <img src="{{prod.photo.url}}" width="20%" style="margin-left: 40%;" alt="">
+            {% endif %}
+        </div>
+        <div class="row">
+            <h1 style="text-align: center">{{prod.name}}</h1>
+        </div>
+        <div class="row">
+            <h2 style="text-align: center">{{prod.price}}(USD)</h2>
+        </div>
+        <div class="row">
+            <h3 style="text-align: center">Published: {{prod.publishdate}}</h3>
+        </div>
+        <div class="row">
+            <h3 style="text-align: center">{{prod.descript}}</h3>
+        </div>
+        <div class="row">
+
+                {% for feed in feedbacks%}
+                <div class="col-sm-6 col-sm-offset-3" style="background: lightslategrey; color: white; margin-bottom: 5px;">
+                    <h4 style="text-align: center">{{feed.username}} ({{feed.rate}})</h4>
+                    <p>{{feed.rewiewtext}}</p>
+                </div>
+                {% endfor %}
+
+        </div>
+        <div class="row">
+            <form action="{%url 'review' %}" method="post" class="col-sm-4 col-sm-offset-4">
+                {% csrf_token %}
+              <div class="form-group">
+                <label>Username:</label>
+                <input type="text" class="form-control" name="username" required>
+              </div>
+              <div class="form-group">
+                <label>Review:</label>
+                  <textarea type="text" class="form-control" name="rewiewtext" required></textarea>
+              </div>
+              <div class="form-group">
+                <label>Rate:</label>
+                  <select name="rate">
+                      <option value="5">5</option>
+                      <option value="4">4</option>
+                      <option value="3">3</option>
+                      <option value="2">2</option>
+                      <option value="1">1</option>
+                  </select>
+              </div>
+                <input type="hidden" name="prodid" value="{{prod.id}} ">
+                <input class="btn btn-success col-sm-2 col-sm-offset-5" type="submit" value="Submit" />
+            </form>
+        </div>
+
+        {% endfor %}
+{% endblock %}
