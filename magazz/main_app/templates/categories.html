@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+    {% block title %}
+    <title>Categories</title>
+    {% endblock %}
+
+{% block content %}
+<div class="row">
+    <a style="margin-top: 10px;" class="btn btn-warning col-sm-2 col-sm-offset-5" href="{%url 'addcat' %}">New Category</a>
+</div>
+<div class="row">
+    <h1 style="text-align: center">Categories</h1>
+</div>
+{% endblock %}
