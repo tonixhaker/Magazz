@@ -5,10 +5,15 @@
 
 {% block content %}
 <a style="margin-top: 10px;" class="btn btn-warning col-sm-2 col-sm-offset-5" href="{%url 'addcat' %}">New Category</a>
-    <div style="text-align: center" class="col-sm-12" style="margin-top: 40px;">
-    {% for cat in categories%}
-        <h4>#{{cat.title|lower}}</h4><br>
-    {% endfor %}
+    <div style="text-align: center; margin-top: 10px;" class="col-sm-6 col-sm-offset-3" style="margin-top: 40px;">
+        <table class="table">
+            {% for cat in categories%}
+            <tr>
+                <td><h4>#{{cat.title|lower}}</h4></td>
+                <td><a style="margin-top: 10px;" class="btn btn-danger col-sm-5 col-sm-offset-2 " href="{%url 'catdel' cat.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
 {% endblock %}
 

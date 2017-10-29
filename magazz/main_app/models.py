@@ -20,6 +20,9 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     publishdate = models.DateField(default=datetime.date.today)
 
+    def __str__(self):
+        return self.name
+
 
 class Review(models.Model):
     username = models.CharField(max_length=100)

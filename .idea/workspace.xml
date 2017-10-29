@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b249a42-3a6e-4b61-8077-cd3b76713be1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/magazz/main_app/static/products.css" afterPath="$PROJECT_DIR$/magazz/main_app/static/products.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/magazz/main_app/templates/confirm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/magazz/main_app/models.py" afterPath="$PROJECT_DIR$/magazz/main_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/magazz/main_app/templates/categories.html" afterPath="$PROJECT_DIR$/magazz/main_app/templates/categories.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/magazz/main_app/templates/detailprod.html" afterPath="$PROJECT_DIR$/magazz/main_app/templates/detailprod.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/magazz/main_app/urls.py" afterPath="$PROJECT_DIR$/magazz/main_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/magazz/main_app/views.py" afterPath="$PROJECT_DIR$/magazz/main_app/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,14 +22,16 @@
       <file leaf-file-name="detailprod.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/magazz/main_app/templates/detailprod.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
-              <folding />
+            <state relative-caret-position="51">
+              <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="142" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="products.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/magazz/main_app/static/products.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="354">
@@ -37,8 +44,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/magazz/main_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="11" />
+            <state relative-caret-position="255">
+              <caret line="18" column="42" lean-forward="false" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -49,8 +56,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/magazz/main_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="39" column="59" lean-forward="false" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
+            <state relative-caret-position="269">
+              <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -58,11 +65,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="categories.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/magazz/main_app/templates/categories.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+              <folding>
+                <element signature="n#style#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="confirm.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/magazz/main_app/templates/confirm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/magazz/main_app/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="20" />
+            <state relative-caret-position="187">
+              <caret line="11" column="51" lean-forward="false" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -108,19 +138,20 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/magazz/main_app/templates/addcategories.html" />
-        <option value="$PROJECT_DIR$/magazz/main_app/models.py" />
         <option value="$PROJECT_DIR$/magazz/main_app/templates/addproduct.html" />
         <option value="$PROJECT_DIR$/magazz/main_app/forms.py" />
         <option value="$PROJECT_DIR$/magazz/magazz/urls.py" />
         <option value="$PROJECT_DIR$/magazz/magazz/settings.py" />
         <option value="$PROJECT_DIR$/magazz/static/products.css" />
         <option value="$PROJECT_DIR$/magazz/main_app/templates/index.html" />
-        <option value="$PROJECT_DIR$/magazz/main_app/templates/categories.html" />
         <option value="$PROJECT_DIR$/magazz/main_app/templates/products.html" />
-        <option value="$PROJECT_DIR$/magazz/main_app/urls.py" />
-        <option value="$PROJECT_DIR$/magazz/main_app/views.py" />
-        <option value="$PROJECT_DIR$/magazz/main_app/templates/detailprod.html" />
         <option value="$PROJECT_DIR$/magazz/main_app/static/products.css" />
+        <option value="$PROJECT_DIR$/magazz/main_app/models.py" />
+        <option value="$PROJECT_DIR$/magazz/main_app/templates/confirm.html" />
+        <option value="$PROJECT_DIR$/magazz/main_app/templates/detailprod.html" />
+        <option value="$PROJECT_DIR$/magazz/main_app/views.py" />
+        <option value="$PROJECT_DIR$/magazz/main_app/urls.py" />
+        <option value="$PROJECT_DIR$/magazz/main_app/templates/categories.html" />
       </list>
     </option>
   </component>
@@ -284,16 +315,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/magazz/main_app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/magazz/main_app/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -470,6 +491,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding>
+            <element signature="e#640#680#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -485,6 +509,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#223#232#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -556,6 +583,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding>
+            <element signature="e#223#232#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -563,6 +593,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -576,6 +609,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding>
+            <element signature="e#640#680#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -612,44 +648,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/magazz/main_app/templates/categories.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/magazz/main_app/templates/addproduct.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="8" lean-forward="false" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="95" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/magazz/main_app/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/magazz/main_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="39" column="59" lean-forward="false" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -665,29 +669,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/magazz/main_app/static/products.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/magazz/main_app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="11" />
+        <state relative-caret-position="255">
+          <caret line="18" column="42" lean-forward="false" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/magazz/main_app/templates/detailprod.html">
+    <entry file="file://$PROJECT_DIR$/magazz/main_app/templates/confirm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+        <state relative-caret-position="153">
+          <caret line="9" column="51" lean-forward="false" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/magazz/main_app/static/products.css">
+    <entry file="file://$PROJECT_DIR$/magazz/main_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="269">
+          <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/magazz/main_app/templates/detailprod.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="142" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/magazz/main_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="51" lean-forward="false" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/magazz/main_app/templates/categories.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#td#1;n#tr#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

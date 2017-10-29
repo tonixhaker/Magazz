@@ -30,6 +30,18 @@ class ProductDetail(ListView):
         return context
 
 
+class ProductDel(DeleteView):
+    template_name = "confirm.html"
+    model = Product
+    success_url = '/products'
+
+
+class CategoryDel(DeleteView):
+    template_name = "confirm.html"
+    model = Category
+    success_url = '/categories'
+
+
 def add_review(request):
     prod = Product.objects.only('id').get(id=request.POST['prodid'])
 

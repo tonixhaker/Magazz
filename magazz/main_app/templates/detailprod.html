@@ -10,6 +10,9 @@
 
         {% for prod in products%}
         <div class="row">
+            <a style="margin-top: 10px;" class="btn btn-danger col-sm-2 col-sm-offset-5 " href="{%url 'prodell' prod.id %}">Delete Product</a>
+        </div>
+        <div class="row">
             {% if prod.photo %}
             <img src="{{prod.photo.url}}" class="pic" alt="">
             {% endif %}
@@ -24,7 +27,7 @@
             <h3>Published: {{prod.publishdate}}</h3>
         </div>
         <div class="row">
-            <h3>Description: {{prod.descript}}</h3>
+            <h3 class="col-sm-8 col-sm-offset-2">Description: {{prod.descript}}</h3>
         </div>
         <div class="row">
                 <h3>Reviews: </h3>
@@ -71,6 +74,7 @@
                 <input class="btn btn-success col-sm-2 col-sm-offset-5" type="submit" value="Submit" />
             </form>
         </div>
+
 
         {% endfor %}
 {% endblock %}
