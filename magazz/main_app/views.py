@@ -87,4 +87,43 @@ class CategoriesAdd(CreateView):
     success_url = '/categories'
 
 
+class AddToCart(TemplateView):
+    template_name = 'addtocart.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(AddToCart, self).get_context_data(**kwargs)
+        context['object'] = Product.objects.filter(id=self.kwargs['pk'])[0]
+        return context
+
+
+def add_tocart(request):
+    prod = Product.objects.only('id').get(id=request.POST['prodid'])
+    print(prod)
+    print(request.POST['quantity'])
+    Cart.objects.create(quantity=int(request.POST['quantity']), product=prod)
+    return redirect('products')
+
+
+class CartView(ListView):
+    template_name = "cart.html"
+    model = Cart
+    context_object_name = 'cart'
+
+    def get_context_data(self, **kwargs):
+        context = super(CartView, self).get_context_data(**kwargs)
+        cart = Cart.objects.filter()
+        res = 0
+        for pr in cart:
+            res += pr.product.price * pr.quantity
+        context['sum'] = res
+        return context
+
+
+class CartDel(DeleteView):
+    template_name = "confirm.html"
+    model = Cart
+    success_url = '/cart'
+
+
+
 
