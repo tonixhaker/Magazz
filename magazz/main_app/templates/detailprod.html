@@ -2,33 +2,47 @@
     {% block title %}
     <title>Product info</title>
     {% endblock %}
+{% block links %}
+    {% load staticfiles %}
+<link rel="stylesheet" href="{% static 'products.css'%}">
+{% endblock %}
 {% block content %}
 
         {% for prod in products%}
         <div class="row">
             {% if prod.photo %}
-            <img src="{{prod.photo.url}}" width="20%" style="margin-left: 40%;" alt="">
+            <img src="{{prod.photo.url}}" class="pic" alt="">
             {% endif %}
         </div>
         <div class="row">
-            <h1 style="text-align: center">{{prod.name}}</h1>
+            <h1>{{prod.name}}</h1>
         </div>
         <div class="row">
-            <h2 style="text-align: center">{{prod.price}}(USD)</h2>
+            <h2>{{prod.price}}(USD)</h2>
         </div>
         <div class="row">
-            <h3 style="text-align: center">Published: {{prod.publishdate}}</h3>
+            <h3>Published: {{prod.publishdate}}</h3>
         </div>
         <div class="row">
-            <h3 style="text-align: center">{{prod.descript}}</h3>
+            <h3>Description: {{prod.descript}}</h3>
         </div>
         <div class="row">
-
+                <h3>Reviews: </h3>
                 {% for feed in feedbacks%}
-                <div class="col-sm-6 col-sm-offset-3" style="background: lightslategrey; color: white; margin-bottom: 5px;">
-                    <h4 style="text-align: center">{{feed.username}} ({{feed.rate}})</h4>
+                {% if feed.rate > 3 %}
+                <div class="col-sm-6 col-sm-offset-3 rev">
+                    <h4>{{feed.username}} ({{feed.rate}})</h4>
                     <p>{{feed.rewiewtext}}</p>
                 </div>
+                {% endif %}
+
+                {% if feed.rate < 3 %}
+                <div class="col-sm-6 col-sm-offset-3 rev2">
+                    <h4>{{feed.username}} ({{feed.rate}})</h4>
+                    <p>{{feed.rewiewtext}}</p>
+                </div>
+                {% endif %}
+
                 {% endfor %}
 
         </div>
