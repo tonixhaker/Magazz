@@ -1,80 +1,77 @@
 {% extends 'index.html' %}
-    {% block title %}
-    <title>Product info</title>
-    {% endblock %}
+{% block title %}
+  <title>Product info</title>
+{% endblock %}
 {% block links %}
-    {% load staticfiles %}
-<link rel="stylesheet" href="{% static 'products.css'%}">
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'products.css'%}">
 {% endblock %}
 {% block content %}
-
-        {% for prod in products%}
-        <div class="row">
-            <a style="margin-top: 10px;" class="btn btn-danger col-sm-2 col-sm-offset-5 " href="{%url 'prodell' prod.id %}">Delete Product</a>
+  {% for prod in products%}
+    <div class="row">
+      <a style="margin-top: 10px;" class="btn btn-danger col-sm-2 col-sm-offset-5 " href="{%url 'prodell' prod.id %}">Delete Product</a>
+    </div>
+    <div class="row">
+      <a style="margin-top: 10px;" class="btn btn-warning col-sm-2 col-sm-offset-5 " href="{%url 'productedit' prod.id %}">Edit Product</a>
+    </div>
+    <div class="row">
+      {% if prod.photo %}
+        <img src="{{prod.photo.url}}" class="pic" alt="">
+      {% endif %}
+    </div>
+    <div class="row">
+      <h1>{{prod.name}}</h1>
+    </div>
+    <div class="row">
+      <h2>{{prod.price}}(USD)</h2>
+    </div>
+    <div class="row">
+      <h3>Published: {{prod.publishdate}}</h3>
+    </div>
+    <div class="row">
+      <h3 class="col-sm-8 col-sm-offset-2">Description: {{prod.descript}}</h3>
+    </div>
+    <div class="row">
+      <h3>Reviews: </h3>
+      {% for feed in feedbacks%}
+        {% if feed.rate > 3 %}
+          <div class="col-sm-6 col-sm-offset-3 rev">
+            <h4>{{feed.username}} ({{feed.rate}})</h4>
+            <p>{{feed.rewiewtext}}</p>
+          </div>
+        {% endif %}
+        {% if feed.rate < 3 %}
+          <div class="col-sm-6 col-sm-offset-3 rev2">
+            <h4>{{feed.username}} ({{feed.rate}})</h4>
+            <p>{{feed.rewiewtext}}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="row">
+      <form action="{%url 'review' %}" method="post" class="col-sm-4 col-sm-offset-4">
+        {% csrf_token %}
+        <div class="form-group">
+          <label>Username:</label>
+          <input type="text" class="form-control" name="username" required>
         </div>
-        <div class="row">
-            {% if prod.photo %}
-            <img src="{{prod.photo.url}}" class="pic" alt="">
-            {% endif %}
+        <div class="form-group">
+          <label>Review:</label>
+          <textarea type="text" class="form-control" name="rewiewtext" required></textarea>
         </div>
-        <div class="row">
-            <h1>{{prod.name}}</h1>
+        <div class="form-group">
+          <label>Rate:</label>
+          <select name="rate">
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
         </div>
-        <div class="row">
-            <h2>{{prod.price}}(USD)</h2>
-        </div>
-        <div class="row">
-            <h3>Published: {{prod.publishdate}}</h3>
-        </div>
-        <div class="row">
-            <h3 class="col-sm-8 col-sm-offset-2">Description: {{prod.descript}}</h3>
-        </div>
-        <div class="row">
-                <h3>Reviews: </h3>
-                {% for feed in feedbacks%}
-                {% if feed.rate > 3 %}
-                <div class="col-sm-6 col-sm-offset-3 rev">
-                    <h4>{{feed.username}} ({{feed.rate}})</h4>
-                    <p>{{feed.rewiewtext}}</p>
-                </div>
-                {% endif %}
-
-                {% if feed.rate < 3 %}
-                <div class="col-sm-6 col-sm-offset-3 rev2">
-                    <h4>{{feed.username}} ({{feed.rate}})</h4>
-                    <p>{{feed.rewiewtext}}</p>
-                </div>
-                {% endif %}
-
-                {% endfor %}
-
-        </div>
-        <div class="row">
-            <form action="{%url 'review' %}" method="post" class="col-sm-4 col-sm-offset-4">
-                {% csrf_token %}
-              <div class="form-group">
-                <label>Username:</label>
-                <input type="text" class="form-control" name="username" required>
-              </div>
-              <div class="form-group">
-                <label>Review:</label>
-                  <textarea type="text" class="form-control" name="rewiewtext" required></textarea>
-              </div>
-              <div class="form-group">
-                <label>Rate:</label>
-                  <select name="rate">
-                      <option value="5">5</option>
-                      <option value="4">4</option>
-                      <option value="3">3</option>
-                      <option value="2">2</option>
-                      <option value="1">1</option>
-                  </select>
-              </div>
-                <input type="hidden" name="prodid" value="{{prod.id}} ">
-                <input class="btn btn-success col-sm-2 col-sm-offset-5" type="submit" value="Submit" />
-            </form>
-        </div>
-
-
-        {% endfor %}
+        <input type="hidden" name="prodid" value="{{prod.id}} ">
+        <input class="btn btn-success col-sm-2 col-sm-offset-5" type="submit" value="Submit" />
+      </form>
+    </div>
+  {% endfor %}
 {% endblock %}

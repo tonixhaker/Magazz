@@ -1,13 +1,13 @@
 from django.shortcuts import render,redirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, TemplateView
-from django.views.generic.edit import FormMixin
 from .forms import *
-# Create your views here.
 
 
 class IndexView(TemplateView):
     template_name = 'index.html'
 
+def index(request):
+    return redirect('products')
 
 class ProductsView(ListView):
     template_name = "products.html"
@@ -24,7 +24,6 @@ class ProductsView(ListView):
             cat = Category.objects.filter(id=int(filter_val))
             context['products'] = Product.objects.filter(category=cat)
         return context
-
 
 
 class ProductDetail(ListView):
@@ -45,6 +44,13 @@ class ProductDetail(ListView):
 class ProductDel(DeleteView):
     template_name = "confirm.html"
     model = Product
+    success_url = '/products'
+
+
+class ProductEdit(UpdateView):
+    template_name = "addproduct.html"
+    model = Product
+    form_class = ProductForm
     success_url = '/products'
 
 
