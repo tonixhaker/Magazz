@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% block title %}
+  <title>Cart</title>
+{% endblock %}
+{% block content %}
+  <div class="row col-sm-8 col-sm-offset-2">
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+      {% for product in cart%}
+        <tr>
+          <td>{{product.id}}</td>
+          <td>{{product.product.name}}</td>
+          <td>{{product.product.price}}</td>
+          <td>{{product.quantity}}</td>
+          <td>
+            <a style="margin-top: 10px;" class="btn btn-danger col-sm-5 " href="{%url 'cartdel' product.id %}">X</a>
+          </td>
+        </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="4"><h3>TOTAL: {{sum}}</h3></td>
+      </tr>
+    </table>
+  </div>
+{% endblock %}

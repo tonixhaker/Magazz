@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block title %}
+  <title>Add to Cart</title>
+{% endblock %}
+{% block content %}
+  <div class="row"></br></br></br></br></div>
+  <div class="row col-sm-10 col-sm-offset-3">
+    <form action="{%url 'addtocartdb' %}" method="post" class="col-sm-5 col-sm-offset-1">
+      {% csrf_token %}
+      <h1>Are you sure you want add to cart "{{ object }}"?</h1>
+      <div class="form-group">
+        <label>Quantity:</label>
+        <input type="number" class="form-control" name="quantity" min="1" required value="1">
+      </div>
+      <input type="hidden" name="prodid" value="{{object.id}} ">
+      <input type="submit" value="Confirm" class="btn btn-danger col-sm-offset-3" />
+    </form>
+  </div>
+{% endblock %}
