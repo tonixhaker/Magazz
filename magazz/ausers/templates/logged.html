@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+    {% block title %}
+    <title>Profile</title>
+    {% endblock %}
+{% block content %}
+<div class="row"></br></br></br></br></div>
+<h1 style="text-align: center" >Hello {{user.username}}</h1>
+<a class="btn btn-warning col-sm-2 col-sm-offset-5" href="{%url 'logout' %}">Logout</a>
+{% endblock %}

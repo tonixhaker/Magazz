@@ -38,6 +38,8 @@ class ProductDetail(ListView):
         context = super(ProductDetail, self).get_context_data(**kwargs)
         productobj = Product.objects.filter(id=self.kwargs['pk'])[0]
         context['feedbacks'] = productobj.review_set.all()
+        if not self.request.user.is_anonymous():
+            context['userr'] = self.request.user
         return context
 
 
@@ -129,6 +131,7 @@ class CartDel(DeleteView):
     template_name = "confirm.html"
     model = Cart
     success_url = '/cart'
+
 
 
 
