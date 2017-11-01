@@ -6,7 +6,8 @@ LightIT Homework. Django proj
 * create virtualenv
 * `pip install -r requirements.txt`
 * install postgre
-* restore db `psql dbname < dump`
-* priveleges to user (postgres:123)
+* `CREATE DATABASE auser;`
+* `python manage.py makemigrations`
+* `python manage.py migrate`
 
 
