@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Product, Category, Review
+from .models import Product, Category, Review, Cart
 import datetime
 
 
@@ -14,7 +14,6 @@ class ProductTestCase(TestCase):
                                publishdate="2017-11-05")
 
     def test_product_created(self):
-        """Animals that can speak are correctly identified"""
         testobj = Product.objects.get(name="test_prod")
         self.assertEqual(testobj.photo, "test.jpg")
         self.assertEqual(testobj.descript, "testdescr")
@@ -38,8 +37,34 @@ class ReviewTestCase(TestCase):
                               product=prod)
 
     def test_rewiew_created(self):
-        """Animals that can speak are correctly identified"""
         testobj = Review.objects.get(username="testuser")
         self.assertEqual(testobj.rewiewtext, "some review text")
         self.assertEqual(testobj.rate, 3)
         self.assertEqual(testobj.product, Product.objects.get(name="test_prod"))
+
+
+class CategoryTestCase(TestCase):
+    def setUp(self):
+        cat = Category.objects.create(title="test_cat")
+
+    def test_cat_created(self):
+        testobj = Category.objects.get(title="test_cat")
+        self.assertEqual(testobj.title, "test_cat")
+
+
+class CartTestCase(TestCase):
+    def setUp(self):
+        cat = Category.objects.create(title="test_cat")
+        prod = Product.objects.create(name="test_prod",
+                                      photo="test.jpg",
+                                      descript="testdescr",
+                                      price=666,
+                                      category=cat,
+                                      publishdate="2017-11-05")
+        Cart.objects.create(product=prod, quantity=666)
+
+    def test_cart_created(self):
+        testobj = Cart.objects.get(product=Product.objects.get(name="test_prod"))
+        self.assertEqual(testobj.quantity, 666)
+
+
