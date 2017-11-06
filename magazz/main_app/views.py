@@ -16,13 +16,12 @@ class ProductsView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ProductsView, self).get_context_data(**kwargs)
-        context['categories'] = Category.objects.filter()
+        context['categories'] = Category.objects.all()
         filter_val = self.request.GET.get('categoryid', 'all')
         if filter_val == 'all':
-            context['products'] = Product.objects.filter()
+            context['products'] = Product.objects.all()
         else:
-            cat = Category.objects.filter(id=int(filter_val))
-            context['products'] = Product.objects.filter(category=cat)
+            context['products'] = Product.objects.filter(category_id=int(filter_val))
         return context
 
 
