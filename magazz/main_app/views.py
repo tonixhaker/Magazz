@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView, TemplateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, TemplateView, FormView
 from .forms import *
 
 
@@ -16,10 +16,10 @@ class ProductsView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ProductsView, self).get_context_data(**kwargs)
-        context['categories'] = Category.objects.filter()
+        context['categories'] = Category.objects.all()
         filter_val = self.request.GET.get('categoryid', 'all')
         if filter_val == 'all':
-            context['products'] = Product.objects.filter()
+            context['products'] = Product.objects.all()
         else:
             cat = Category.objects.filter(id=int(filter_val))
             context['products'] = Product.objects.filter(category=cat)
@@ -95,21 +95,20 @@ class CategoriesAdd(CreateView):
     success_url = '/categories'
 
 
-class AddToCart(TemplateView):
+class AddInCart(FormView):
+    form_class = CartForm
     template_name = 'addtocart.html'
+    success_url = '/products'
 
     def get_context_data(self, **kwargs):
         context = super(AddToCart, self).get_context_data(**kwargs)
         context['object'] = Product.objects.get(id=self.kwargs['pk'])
         return context
 
-
-def add_tocart(request):
-    prod = Product.objects.only('id').get(id=request.POST['prodid'])
-    print(prod)
-    print(request.POST['quantity'])
-    Cart.objects.create(quantity=int(request.POST['quantity']), product=prod)
-    return redirect('products')
+    def form_valid(self, form):
+        prodobj = Product.objects.filter(id=form.cleaned_data['product'].id)[0]
+        Cart.objects.create(quantity=int(form.cleaned_data['quantity']), product= prodobj)
+        return redirect('products')
 
 
 class CartView(ListView):
