@@ -36,7 +36,7 @@ class ProductDetail(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(ProductDetail, self).get_context_data(**kwargs)
-        productobj = Product.objects.filter(id=self.kwargs['pk'])[0]
+        productobj = Product.objects.get(id=self.kwargs['pk'])
         context['feedbacks'] = productobj.review_set.all()
         if not self.request.user.is_anonymous():
             context['userr'] = self.request.user
@@ -69,7 +69,7 @@ def add_review(request):
                           rewiewtext=request.POST['rewiewtext'],
                           rate=int(request.POST['rate']),
                           product=prod)
-    return redirect('prodetail',int(request.POST['prodid']))
+    return redirect('prodetail', int(request.POST['prodid']))
 
 
 class ProductsAdd(CreateView):
@@ -101,8 +101,8 @@ class AddInCart(FormView):
     success_url = '/products'
 
     def get_context_data(self, **kwargs):
-        context = super(AddInCart, self).get_context_data(**kwargs)
-        context['object'] = Product.objects.filter(id=self.kwargs['pk'])[0]
+        context = super(AddToCart, self).get_context_data(**kwargs)
+        context['object'] = Product.objects.get(id=self.kwargs['pk'])
         return context
 
     def form_valid(self, form):
@@ -130,8 +130,3 @@ class CartDel(DeleteView):
     template_name = "confirm.html"
     model = Cart
     success_url = '/cart'
-
-
-
-
-
