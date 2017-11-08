@@ -34,7 +34,7 @@
     <div class="row">
       <h3>Reviews: </h3>
       {% for feed in feedbacks%}
-        {% if feed.rate > 3 %}
+        {% if feed.rate >= 3 %}
           <div class="col-sm-6 col-sm-offset-3 rev">
             <h4>{{feed.username}} ({{feed.rate}})</h4>
             <p>{{feed.rewiewtext}}</p>
