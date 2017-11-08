@@ -100,12 +100,12 @@ class AddInCart(FormView):
     success_url = '/products'
 
     def get_context_data(self, **kwargs):
-        context = super(AddToCart, self).get_context_data(**kwargs)
+        context = super(AddInCart, self).get_context_data(**kwargs)
         context['object'] = Product.objects.get(id=self.kwargs['pk'])
         return context
 
     def form_valid(self, form):
-        prodobj = Product.objects.filter(id=form.cleaned_data['product'].id)[0]
+        prodobj = Product.objects.get(id=form.cleaned_data['product'].id)
         Cart.objects.create(quantity=int(form.cleaned_data['quantity']), product= prodobj)
         return redirect('products')
 
