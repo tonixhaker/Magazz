@@ -21,8 +21,7 @@ class ProductsView(ListView):
         if filter_val == 'all':
             context['products'] = Product.objects.all()
         else:
-            cat = Category.objects.filter(id=int(filter_val))
-            context['products'] = Product.objects.filter(category=cat)
+            context['products'] = Product.objects.filter(category_id=int(filter_val))
         return context
 
 
