@@ -15,8 +15,7 @@ urlpatterns = [
     url(r'^categories/$', views.CategoriesView.as_view(), name='categories'),
     url(r'^addcat/$', views.CategoriesAdd.as_view(), name='addcat'),
     url(r'^review/$', views.add_review, name='review'),
-    url(r'^addtocartdb/$', views.add_tocart, name='addtocartdb'),
-    url(r'^addtocart/(?P<pk>\d+)/$', views.AddToCart.as_view(), name='addtocart'),
+    url(r'^addtocart/(?P<pk>\d+)/$', views.AddInCart.as_view(), name='addtocart'),
     url(r'^cart/$', views.CartView.as_view(), name='cart'),
     url(r'^cartdel/(?P<pk>\d+)/$', views.CartDel.as_view(), name='cartdel'),
 
